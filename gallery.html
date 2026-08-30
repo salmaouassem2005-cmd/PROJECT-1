@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gallery · Hello, World!</title>
+    <style>
+      :root { color-scheme:dark; --ink:#f8fafc; --muted:#cbd5e1; --violet:#a78bfa; --cyan:#67e8f9; } * { box-sizing:border-box; }
+      body { min-height:100vh; margin:0; padding:2rem; font-family:Inter,ui-sans-serif,system-ui,sans-serif; color:var(--ink); background:radial-gradient(circle at 10% 8%,rgba(139,92,246,.42),transparent 28rem),radial-gradient(circle at 92% 88%,rgba(6,182,212,.32),transparent 30rem),#090b18; }
+      main { width:min(100%,1040px); margin:0 auto; padding:clamp(2rem,6vw,4rem); border:1px solid rgba(255,255,255,.18); border-radius:2rem; background:rgba(15,19,43,.68); box-shadow:0 28px 80px rgba(0,0,0,.42); backdrop-filter:blur(18px); }
+      nav { display:flex; flex-wrap:wrap; gap:.55rem; margin-bottom:3.5rem; } nav a { padding:.55rem .9rem; border:1px solid transparent; border-radius:999px; color:var(--muted); font-size:.88rem; font-weight:700; text-decoration:none; transition:.2s ease; } nav a:hover,nav a[aria-current="page"] { color:var(--ink); border-color:rgba(103,232,249,.42); background:rgba(103,232,249,.1); }
+      .eyebrow { color:var(--cyan); font-size:.78rem; font-weight:800; letter-spacing:.18em; text-transform:uppercase; } h1 { margin:.75rem 0; font-size:clamp(3rem,9vw,5.5rem); line-height:.95; letter-spacing:-.07em; background:linear-gradient(110deg,#fff 20%,var(--cyan) 52%,var(--violet) 85%); -webkit-background-clip:text; background-clip:text; color:transparent; } .intro { margin:0 0 2.4rem; color:var(--muted); font-size:1.1rem; line-height:1.7; }
+      .grid { display:grid; grid-template-columns:repeat(12,1fr); grid-auto-rows:110px; gap:1rem; } .card { position:relative; overflow:hidden; border:1px solid rgba(255,255,255,.13); border-radius:1.15rem; min-height:0; isolation:isolate; transition:transform .25s ease, border-color .25s ease; } .card:hover { transform:translateY(-5px); border-color:rgba(103,232,249,.65); } .card::before { content:""; position:absolute; inset:0; z-index:-1; background:var(--art); transition:transform .4s ease; } .card:hover::before { transform:scale(1.08); } .card span { position:absolute; left:1rem; bottom:.85rem; padding:.35rem .6rem; border-radius:.5rem; background:rgba(9,11,24,.5); color:#fff; font-size:.8rem; font-weight:800; backdrop-filter:blur(6px); }
+      .a { grid-column:span 7; grid-row:span 3; --art:radial-gradient(circle at 25% 25%,#f0abfc 0 4%,transparent 4.5%),radial-gradient(circle at 70% 60%,#67e8f9 0 12%,transparent 12.5%),linear-gradient(135deg,#312e81,#7c3aed 48%,#0e7490); } .b { grid-column:span 5; grid-row:span 2; --art:linear-gradient(125deg,#fb7185,#f97316 45%,#fef08a); } .c { grid-column:span 5; grid-row:span 2; --art:radial-gradient(circle at 25% 35%,#fff 0 4%,transparent 4.5%),linear-gradient(145deg,#172554,#2563eb 53%,#22d3ee); } .d { grid-column:span 4; grid-row:span 2; --art:linear-gradient(135deg,#14532d,#4ade80 55%,#d9f99d); } .e { grid-column:span 4; grid-row:span 2; --art:linear-gradient(145deg,#3f1d2e,#be185d 55%,#f9a8d4); } .f { grid-column:span 4; grid-row:span 2; --art:radial-gradient(circle at 70% 30%,#fde68a,transparent 20%),linear-gradient(145deg,#111827,#334155 56%,#94a3b8); }
+      @media (max-width:620px) { body { padding:1rem; } main { padding:2rem; } .grid { grid-template-columns:repeat(2,1fr); grid-auto-rows:120px; } .a,.b,.c,.d,.e,.f { grid-column:span 1; grid-row:span 2; } .a { grid-column:span 2; } }
+    </style>
+  </head>
+  <body>
+    <main>
+      <nav aria-label="Primary navigation"><a href="index.html">Home</a><a href="about.html">About</a><a href="gallery.html" aria-current="page">Gallery</a><a href="contact.html">Contact</a></nav>
+      <div class="eyebrow">Visual notebook</div>
+      <h1>A little color<br>collection.</h1>
+      <p class="intro">Six tiny digital landscapes, made to bring a bit of light to the page.</p>
+      <section class="grid" aria-label="Abstract image gallery">
+        <div class="card a"><span>Cosmic bloom</span></div><div class="card b"><span>Golden hour</span></div><div class="card c"><span>Blue moon</span></div><div class="card d"><span>Verdant</span></div><div class="card e"><span>Rose haze</span></div><div class="card f"><span>After dark</span></div>
+      </section>
+    </main>
+  </body>
+</html>
